@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Correlation Focus — March 8, 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif; background: #0a0e17; color: #e0e6ed; line-height: 1.65; padding: 40px 20px; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  .container { max-width: 840px; margin: 0 auto; }
+  .logo-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .logo { display: flex; flex-direction: column; }
+  .logo-main { font-size: 13px; font-weight: 300; letter-spacing: 8px; color: #fff; text-transform: uppercase; }
+  .logo-main span { font-weight: 600; }
+  .logo-divider { width: 40px; height: 1px; background: linear-gradient(to right, #9b59ff, #1e90ff); margin: 6px 0; }
+  .logo-sub { font-size: 9px; color: #5a6a7e; letter-spacing: 3px; text-transform: uppercase; }
+  .logo-confidential { font-size: 9px; color: #2a3444; letter-spacing: 1.5px; text-transform: uppercase; text-align: right; }
+  .header { border-bottom: 2px solid #9b59ff; padding-bottom: 20px; margin-bottom: 28px; }
+  .header-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+  .brand { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: #9b59ff; font-weight: 600; }
+  .date { font-size: 12px; color: #7a8ba3; text-align: right; }
+  h1 { font-size: 24px; font-weight: 700; color: #fff; margin-top: 10px; letter-spacing: -0.5px; }
+  .subtitle { font-size: 13px; color: #7a8ba3; margin-top: 4px; }
+  .section { margin-bottom: 28px; }
+  .section-header { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+  .section-icon { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .section-icon.purple { background: rgba(155,89,255,0.15); }
+  .section-icon.blue { background: rgba(30,144,255,0.15); }
+  .section-icon.green { background: rgba(0,200,83,0.15); }
+  .section-icon.red { background: rgba(255,68,68,0.15); }
+  .section-icon.orange { background: rgba(255,152,0,0.15); }
+  .section-icon.yellow { background: rgba(255,215,0,0.15); }
+  .section-icon.teal { background: rgba(0,188,212,0.15); }
+  h2 { font-size: 15px; font-weight: 600; color: #fff; text-transform: uppercase; letter-spacing: 1px; }
+  .section-body { font-size: 13.5px; color: #b8c5d6; padding-left: 36px; }
+  .section-body p { margin-bottom: 10px; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+  th { background: #111827; color: #7a8ba3; font-weight: 600; text-transform: uppercase; font-size: 10px; letter-spacing: 1px; padding: 10px 12px; text-align: left; border-bottom: 1px solid #1e293b; }
+  th:not(:first-child) { text-align: center; }
+  td { padding: 9px 12px; border-bottom: 1px solid #1e293b; color: #c8d5e3; }
+  td:not(:first-child) { text-align: center; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px; }
+  tr:hover { background: rgba(155,89,255,0.04); }
+  .idx-name { font-weight: 500; color: #e0e6ed; }
+  .pos { color: #00c853; } .neg { color: #ff5252; } .flat { color: #7a8ba3; } .warn { color: #ff9800; }
+  .hi { color: #ff5252; font-weight: 600; } .mid { color: #ff9800; } .lo { color: #00c853; }
+  .alert-banner { border: 1px solid #9b59ff; border-left: 4px solid #9b59ff; border-radius: 6px; padding: 14px 18px; margin-bottom: 20px; background: rgba(155,89,255,0.06); }
+  .alert-text { font-size: 13px; color: #d1b3ff; font-weight: 500; }
+  .highlight-box { background: rgba(155,89,255,0.06); border: 1px solid rgba(155,89,255,0.2); border-radius: 6px; padding: 14px 16px; margin: 12px 0; font-size: 13px; color: #d1b3ff; }
+  .highlight-box strong { color: #bb86fc; }
+  .highlight-box.blue { background: rgba(30,144,255,0.06); border-color: rgba(30,144,255,0.2); color: #a0c4e8; }
+  .highlight-box.blue strong { color: #4db8ff; }
+  .highlight-box.red { background: rgba(255,68,68,0.06); border-color: rgba(255,68,68,0.2); color: #ff8a80; }
+  .highlight-box.red strong { color: #ff5252; }
+  .highlight-box.green { background: rgba(0,200,83,0.06); border-color: rgba(0,200,83,0.2); color: #a5d6a7; }
+  .highlight-box.green strong { color: #00c853; }
+  .highlight-box.orange { background: rgba(255,152,0,0.06); border-color: rgba(255,152,0,0.2); color: #ffe0b2; }
+  .highlight-box.orange strong { color: #ffab40; }
+  .trade-idea { background: #0f1923; border: 1px solid #1e293b; border-radius: 8px; padding: 14px 16px; margin: 10px 0; }
+  .trade-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; margin-bottom: 6px; }
+  .trade-label.long-corr { color: #ff5252; } .trade-label.short-corr { color: #00c853; } .trade-label.rv { color: #1e90ff; } .trade-label.hedge { color: #ff9800; } .trade-label.exotic { color: #9b59ff; }
+  .trade-desc { font-size: 13px; color: #b8c5d6; }
+  .trade-rationale { font-size: 12px; color: #7a8ba3; margin-top: 6px; font-style: italic; }
+  .divider { height: 1px; background: linear-gradient(to right, transparent, #1e293b, transparent); margin: 24px 0; }
+  .kpi-bar { display: flex; gap: 14px; flex-wrap: wrap; margin: 12px 0; }
+  .kpi-item { background: #111827; border: 1px solid #1e293b; border-radius: 6px; padding: 10px 14px; min-width: 120px; flex: 1; }
+  .kpi-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #7a8ba3; margin-bottom: 4px; }
+  .kpi-value { font-size: 18px; font-weight: 600; color: #fff; font-family: 'SF Mono', 'Fira Code', monospace; }
+  .kpi-sub { font-size: 11px; margin-top: 2px; font-weight: 500; }
+  .corr-matrix td { font-size: 11px; padding: 7px 6px; }
+  .corr-matrix th { font-size: 9px; padding: 7px 6px; }
+  .corr-matrix .self { color: #4a5568; }
+  .footer { border-top: 1px solid #1e293b; padding-top: 16px; margin-top: 32px; font-size: 11px; color: #4a5568; text-align: center; line-height: 1.8; }
+  @media (max-width: 600px) { .kpi-bar { flex-direction: column; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="logo-bar">
+    <div class="logo">
+      <div class="logo-main">STELLAR <span>SECURITIES</span></div>
+      <div class="logo-divider"></div>
+      <div class="logo-sub">by Market Securities</div>
+    </div>
+    <div class="logo-confidential">Confidential<br>For Professional Clients Only</div>
+  </div>
+
+  <div class="header">
+    <div class="header-top">
+      <div class="brand">Correlation & Dispersion Focus — Special Note</div>
+      <div class="date">Saturday, March 8, 2026<br>Weekend Edition</div>
+    </div>
+    <h1>Cross-Index Correlation: War Shock Drives Convergence — Where Next?</h1>
+    <div class="subtitle">SX5E / SPX / NKY / KOSPI / FTSE correlation regime shift | Dispersion collapsing | Implications for exotic books & correlation products</div>
+  </div>
+
+  <div class="alert-banner">
+    <span class="alert-text">📊 <strong>CORRELATION REGIME:</strong> The Iran conflict has triggered a classic risk-off correlation spike across global equity indices. Cross-index realized correlation has surged toward crisis-era levels. Dispersion is compressing. This is critical for anyone trading worst-of, best-of, basket options, or running dispersion books.</span>
+  </div>
+
+  <!-- Part 1 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon purple">🔗</div>
+      <h2>Part 1 — Current Cross-Index Regime</h2>
+    </div>
+    <div class="section-body">
+      <p><strong>What happened this week:</strong> The U.S.-Iran war created a synchronized global selloff. Every major index fell in tandem — SX5E -7.2%, DAX -6.9%, FTSE -5%, S&P -4%, NKY -3.6%, KOSPI -12% then +9.6% rebound. When a single macro shock dominates, stock-picking and regional allocation become irrelevant — everything correlates to one. This is the regime that exotic traders need to navigate carefully.</p>
+
+      <table>
+        <thead>
+          <tr><th>Index</th><th>Last</th><th>WTD</th><th>YTD</th><th>52W High</th><th>From High</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="idx-name">SX5E (Euro Stoxx 50)</td><td>5,720</td><td class="neg">-7.2%</td><td class="neg">-2.2%</td><td>6,173</td><td class="neg">-7.3%</td></tr>
+          <tr><td class="idx-name">SPX (S&P 500)</td><td>6,740</td><td class="neg">-4.0%</td><td class="pos">+1.8%</td><td>7,002</td><td class="neg">-3.7%</td></tr>
+          <tr><td class="idx-name">UKX (FTSE 100)</td><td>10,285</td><td class="neg">-5.0%</td><td class="pos">+5%</td><td>10,935</td><td class="neg">-5.9%</td></tr>
+          <tr><td class="idx-name">NKY (Nikkei 225)</td><td>55,621</td><td class="neg">-3.6%</td><td class="pos">+8%</td><td>~58,000</td><td class="neg">-4.1%</td></tr>
+          <tr><td class="idx-name">KOSPI</td><td>~5,584</td><td class="neg">-12%/+9.6%</td><td class="pos">Strong</td><td>6,307</td><td class="neg">-11.5%</td></tr>
+          <tr><td class="idx-name">HSI (Hang Seng)</td><td>25,757</td><td class="neg">~-3%</td><td class="flat">Mixed</td><td>27,500</td><td class="neg">-6.3%</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>The correlation surge explained:</strong> In normal markets, cross-index correlations run between 0.50 and 0.75 depending on the pair. During macro shocks (2008, 2020, 2022 Russia/Ukraine), correlations spike to 0.85-0.95 as a single factor dominates all markets. We are in that regime now. The Iran war is the single dominant driver — oil, rates, and risk appetite are all tied to Hormuz headlines, and every index responds to the same signal.</p>
+    </div>
+  </div>
+
+  <!-- Part 2: Correlation Matrix -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon blue">📐</div>
+      <h2>Part 2 — Cross-Index Correlation Matrix (Estimated Current vs Normal)</h2>
+    </div>
+    <div class="section-body">
+
+      <p><strong>Estimated current 1-month realized correlations</strong> (based on the synchronized selloff this week — indicative, not exact Bloomberg levels):</p>
+
+      <table class="corr-matrix">
+        <thead>
+          <tr><th></th><th>SX5E</th><th>SPX</th><th>FTSE</th><th>NKY</th><th>KOSPI</th><th>HSI</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="idx-name">SX5E</td><td class="self">1.00</td><td class="hi">0.90</td><td class="hi">0.92</td><td class="hi">0.85</td><td class="mid">0.78</td><td class="mid">0.72</td></tr>
+          <tr><td class="idx-name">SPX</td><td class="hi">0.90</td><td class="self">1.00</td><td class="hi">0.87</td><td class="hi">0.88</td><td class="hi">0.82</td><td class="mid">0.70</td></tr>
+          <tr><td class="idx-name">FTSE</td><td class="hi">0.92</td><td class="hi">0.87</td><td class="self">1.00</td><td class="mid">0.80</td><td class="mid">0.73</td><td class="mid">0.68</td></tr>
+          <tr><td class="idx-name">NKY</td><td class="hi">0.85</td><td class="hi">0.88</td><td class="mid">0.80</td><td class="self">1.00</td><td class="hi">0.85</td><td class="mid">0.75</td></tr>
+          <tr><td class="idx-name">KOSPI</td><td class="mid">0.78</td><td class="hi">0.82</td><td class="mid">0.73</td><td class="hi">0.85</td><td class="self">1.00</td><td class="mid">0.78</td></tr>
+          <tr><td class="idx-name">HSI</td><td class="mid">0.72</td><td class="mid">0.70</td><td class="mid">0.68</td><td class="mid">0.75</td><td class="mid">0.78</td><td class="self">1.00</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>vs. Normal regime correlations</strong> (typical 6-month realized, pre-crisis):</p>
+
+      <table class="corr-matrix">
+        <thead>
+          <tr><th></th><th>SX5E</th><th>SPX</th><th>FTSE</th><th>NKY</th><th>KOSPI</th><th>HSI</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="idx-name">SX5E</td><td class="self">1.00</td><td class="mid">0.70</td><td class="mid">0.80</td><td class="lo">0.55</td><td class="lo">0.45</td><td class="lo">0.40</td></tr>
+          <tr><td class="idx-name">SPX</td><td class="mid">0.70</td><td class="self">1.00</td><td class="mid">0.65</td><td class="lo">0.60</td><td class="lo">0.50</td><td class="lo">0.40</td></tr>
+          <tr><td class="idx-name">FTSE</td><td class="mid">0.80</td><td class="mid">0.65</td><td class="self">1.00</td><td class="lo">0.50</td><td class="lo">0.40</td><td class="lo">0.35</td></tr>
+          <tr><td class="idx-name">NKY</td><td class="lo">0.55</td><td class="lo">0.60</td><td class="lo">0.50</td><td class="self">1.00</td><td class="mid">0.65</td><td class="lo">0.55</td></tr>
+          <tr><td class="idx-name">KOSPI</td><td class="lo">0.45</td><td class="lo">0.50</td><td class="lo">0.40</td><td class="mid">0.65</td><td class="self">1.00</td><td class="lo">0.60</td></tr>
+          <tr><td class="idx-name">HSI</td><td class="lo">0.40</td><td class="lo">0.40</td><td class="lo">0.35</td><td class="lo">0.55</td><td class="lo">0.60</td><td class="self">1.00</td></tr>
+        </tbody>
+      </table>
+
+      <div class="highlight-box">
+        <strong>Key Takeaway:</strong> Cross-index correlations have jumped 20-40 points across the board. The biggest movers are the long-distance pairs — SX5E/KOSPI went from ~0.45 normal to ~0.78, SPX/NKY from ~0.60 to ~0.88. The intra-Europe pairs (SX5E/FTSE) were already high and have moved to near-1. This is textbook crisis behavior — correlations converge toward 1 when a single global factor dominates.
+      </div>
+
+      <p><strong>Important caveat:</strong> These are estimates based on observed co-movements this week. For exact levels, check your Bloomberg CRR or CORR functions. The direction and magnitude of the shift are what matter for positioning, and those are clear.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Part 3: Pair-by-Pair Analysis -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon green">🔍</div>
+      <h2>Part 3 — Pair-by-Pair Correlation Dynamics</h2>
+    </div>
+    <div class="section-body">
+
+      <p><strong>SX5E vs SPX — The Transatlantic Pair:</strong> This is the most liquid correlation pair for exotic desks. Pre-crisis, the "Great Rotation" narrative had been driving these two apart — European value outperforming US tech, creating decorrelation. That decorrelation theme is now on hold. The oil shock hits both, but asymmetrically: Europe is more directly exposed to energy costs (import-dependent), while the US has its own production base. As the shock fades, we expect this pair to de-correlate again — the structural factors (EU value rotation, US tech concentration) haven't changed. <strong>Medium-term view: decorrelation should resume.</strong></p>
+
+      <p><strong>SX5E vs FTSE — The European Pair:</strong> Normally very correlated (0.80+), now near 0.92. But there's a key structural divergence: the FTSE is heavy in energy and mining (BP, Shell, Rio Tinto, Glencore), which benefit from the oil surge. The SX5E is more exposed to banks, autos, and industrials, which are hurt. So while the macro shock has pushed them together, the sector composition should pull them apart once the first wave of panic passes. <strong>View: the FTSE should outperform SX5E if oil stays elevated — this creates a decorrelation opportunity.</strong></p>
+
+      <p><strong>SPX vs NKY — The Dollar/Yen Dynamic:</strong> One of the most important pairs. The correlation has spiked to ~0.88 but there's a hidden asymmetry: Japan is a massive energy importer, and yen weakness (which normally helps exporters) is now a double-edged sword because it makes oil imports more expensive. The NKY also has a strong tech/semiconductor component (Tokyo Electron, Advantest) that correlates with US tech. The BOJ rate path adds another independent factor. <strong>View: this pair could diverge if the yen strengthens as a safe haven or if the BOJ surprises.</strong></p>
+
+      <p><strong>KOSPI — The High-Beta Outlier:</strong> KOSPI is the most volatile index in this crisis — -12% in one day, +9.6% the next. This is structural: Samsung and SK Hynix represent ~50% of the index, making it effectively a semiconductor bet. South Korea is also highly sensitive to oil prices as a major energy importer (oil imports = 2.7% of GDP per Nomura). Additionally, KOSPI had the strongest 2025 rally (+71.2% YTD in 2025, +76.5% from the April low), so the correction is partly mechanical profit-taking. <strong>View: KOSPI will be the first to decorrelate — its idiosyncratic semiconductor cycle will dominate once the panic subsides. Highest dispersion potential vs other indices.</strong></p>
+
+      <p><strong>HSI — The China Wildcard:</strong> Hang Seng is the most decorrelated in the matrix, and for good reason: China's economy runs on a different cycle (domestic demand, property, policy stimulus). Beijing just set GDP growth at 4.5-5%, the lowest on record. HSI has its own dynamics that are largely independent of the Middle East — China is actually a beneficiary of discounted Iranian oil. <strong>View: HSI offers the most natural decorrelation to the Middle East theme. Lowest correlation to the war shock.</strong></p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Part 4: Historical Context -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon orange">📚</div>
+      <h2>Part 4 — Historical Correlation Regimes</h2>
+    </div>
+    <div class="section-body">
+
+      <table>
+        <thead>
+          <tr><th>Crisis Event</th><th>Duration</th><th>Peak Corr</th><th>Corr Normalization</th><th>Dispersion Recovery</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="idx-name">2008 GFC</td><td>~18 months</td><td class="hi">0.90-0.95</td><td>6-12 months after peak</td><td>Gradual, sector-led</td></tr>
+          <tr><td class="idx-name">2011 Euro Crisis</td><td>~6 months</td><td class="hi">0.85-0.90</td><td>3-6 months</td><td>Faster, EU vs US split</td></tr>
+          <tr><td class="idx-name">2020 COVID</td><td>~3 months</td><td class="hi">0.92-0.97</td><td>2-4 months</td><td>Very fast — tech diverged</td></tr>
+          <tr><td class="idx-name">2022 Russia/Ukraine</td><td>~4 months</td><td class="hi">0.85-0.90</td><td>3-6 months</td><td>Energy decorrelated first</td></tr>
+          <tr><td class="idx-name">2026 Iran (current)</td><td>1 week+</td><td class="hi">0.85-0.92</td><td class="warn">???</td><td class="warn">TBD</td></tr>
+        </tbody>
+      </table>
+
+      <div class="highlight-box blue">
+        <strong>Historical Pattern:</strong> Correlation spikes are violent but mean-reverting. The key question is always: how long does the single-factor regime last? In COVID, it lasted ~3 months before the tech/value split emerged. In Russia/Ukraine, energy stocks decorrelated first (within weeks) while broader indices took 3-6 months. The current Iran crisis is 1 week old — we are at the peak of the correlation spike. Historical precedent suggests dispersion should start re-emerging within 2-6 weeks if the conflict stabilizes.
+      </div>
+
+      <p><strong>The SX7E Bank Dividend Futures angle:</strong> Interestingly, EURO STOXX Banks Dividend futures are already trading 7.9-23% below pre-war levels — this is a form of decorrelation within the European equity complex. Banks are being hit harder on dividend expectations than the broader index, creating relative value between sectors. This within-index dispersion is the first crack in the correlation regime.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Part 5: Implied Correlation & Dispersion -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon teal">⚡</div>
+      <h2>Part 5 — Implied Correlation, Dispersion & The Cboe Framework</h2>
+    </div>
+    <div class="section-body">
+
+      <p><strong>Cboe COR3M (S&P 500 Implied Correlation):</strong> The Cboe 3-month Implied Correlation Index measures the market's expectation of average pairwise correlation among the top 50 S&P 500 stocks using ATM implied volatilities. Historically, implied correlation trades at a premium to realized — this premium is the Correlation Risk Premium (CRP) that dispersion traders harvest. In the current environment, both implied and realized correlation have surged, compressing the premium.</p>
+
+      <p><strong>Cboe DSPX (S&P 500 Dispersion Index):</strong> The Dispersion Index measures expected dispersion — how much individual stocks are expected to move relative to the index. When correlation spikes, DSPX tends to drop (less idiosyncratic movement expected). In January 2026, VIX closed at 17.44 with broad dispersion still elevated. The Iran shock has since pushed VIX to 24-30 range while DSPX has compressed — classic "everything trades together" regime.</p>
+
+      <div class="highlight-box orange">
+        <strong>The Dispersion Trade Setup:</strong> A classic long dispersion trade (short index vol, long single-stock vol) is currently underwater because correlation has spiked. However, historically these trades generate their best entries at the peak of correlation spikes — when implied correlation is at its highest and the CRP is richest. The question is timing: entering too early means more pain; entering at the right moment means capturing the normalization. Historical precedent (2020, 2022) suggests the best entry is 2-4 weeks after the initial shock, once the first wave of correlation has peaked but before normalization is fully priced.
+      </div>
+
+      <p><strong>Cross-index implied correlation:</strong> While Cboe provides intra-SPX implied correlation, there is no single published index for cross-index (SX5E vs NKY vs KOSPI) implied correlation. These levels are derived from exotic option pricing — worst-of puts, best-of calls, multi-index autocalls, and quanto structures. Dealers are currently marking cross-index implied correlations significantly higher. For clients running these books, the P&L impact from the correlation spike is material — worst-of products have gotten more expensive (higher correlation = less diversification benefit = lower worst-of prices), while best-of products have cheapened.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Part 6: My View -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon red">🎯</div>
+      <h2>Part 6 — Our View: Correlation or Dispersion Going Forward?</h2>
+    </div>
+    <div class="section-body">
+
+      <p><strong>Short-term (next 2-4 weeks): CORRELATION STAYS HIGH.</strong> The Iran conflict has no clear resolution timeline. Trump's "unconditional surrender" demand suggests this is not a quick operation. As long as Hormuz is disrupted and oil stays above $85, the single-factor regime dominates. Expect cross-index correlations to remain elevated at 0.80+. Dispersion trades will continue to bleed. Worst-of products remain under pressure.</p>
+
+      <p><strong>Medium-term (1-3 months): DISPERSION RE-EMERGES — ASYMMETRICALLY.</strong> Once the initial shock is absorbed (either through ceasefire, diplomatic resolution, or market adaptation), structural divergences will reassert. The order of decorrelation we expect:</p>
+
+      <p><strong>1. FTSE vs SX5E</strong> — first to diverge, because the FTSE benefits directly from high oil (energy heavyweights) while SX5E is hurt. This is already starting.</p>
+
+      <p><strong>2. KOSPI vs DM indices</strong> — KOSPI's semiconductor cycle is independent. Once Samsung/Hynix earnings confirm the memory chip cycle is intact, KOSPI will decouple from the geopolitical trade.</p>
+
+      <p><strong>3. HSI vs everything</strong> — China runs on its own macro cycle. HSI will decorrelate as China policy stimulus and property stabilization become the dominant factors.</p>
+
+      <p><strong>4. SPX vs SX5E</strong> — last to diverge, because both are large, liquid, and dominated by global macro sentiment. But the structural "Great Rotation" theme (US tech → EU value) should eventually reassert.</p>
+
+      <p><strong>5. NKY</strong> — the wildcard. Depends on BOJ (next meeting, rate path), yen dynamics, and whether Japan's semiconductor supply chain narrative holds. Could go either way vs SPX.</p>
+
+      <div class="highlight-box green">
+        <strong>Net View:</strong> We are at peak correlation. The mean-reversion trade is coming but it's too early to put it on in size. The best approach now is to prepare the infrastructure for dispersion trades and cross-index relative value, and look for entry signals — the first of which will be FTSE outperforming SX5E and KOSPI showing independent semiconductor-driven moves. When those signals appear, it's time to get long dispersion aggressively.
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Part 7: Trade Ideas -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon yellow">💡</div>
+      <h2>Part 7 — Trade Ideas for Correlation & Exotic Desks</h2>
+    </div>
+    <div class="section-body">
+
+      <div class="trade-idea">
+        <div class="trade-label long-corr">STAY LONG CORRELATION — Near Term</div>
+        <div class="trade-desc"><strong>Buy worst-of puts on SX5E/NKY/KOSPI basket:</strong> As long as the war continues, correlation stays high. Worst-of puts are cheaper than buying puts on each individual index (correlation discount). Use 1-month expiry to capture the acute phase.</div>
+        <div class="trade-rationale">Rationale: Worst-of payoff is maximized when correlation is high and the weakest index falls hard. KOSPI is the most volatile leg — a -12% single-day move demonstrates the tail risk. Short-dated worst-of puts are an efficient way to hedge a multi-index portfolio during a correlated selloff.</div>
+      </div>
+
+      <div class="trade-idea">
+        <div class="trade-label short-corr">PREPARE TO SHORT CORRELATION — Medium Term</div>
+        <div class="trade-desc"><strong>Calendar spread: Sell 1m correlation / Buy 3m correlation</strong> (via worst-of vs best-of structures, or direct dispersion trades). The front end is pricing in extreme correlation that will mean-revert; the back end has more uncertainty.</div>
+        <div class="trade-rationale">Rationale: Historical precedent shows correlation spikes are violent but short-lived (2-4 weeks of peak, then 2-6 months of normalization). A calendar structure captures this term structure steepness. Wait for the first signs of decorrelation before entering in size.</div>
+      </div>
+
+      <div class="trade-idea">
+        <div class="trade-label rv">RELATIVE VALUE — FTSE vs SX5E Decorrelation</div>
+        <div class="trade-desc"><strong>Long FTSE / Short SX5E via options overlay:</strong> Buy FTSE calls, sell SX5E calls (or call spreads). The FTSE's energy weighting makes it a natural outperformer in a high-oil environment. This is the first pair that should decorrelate.</div>
+        <div class="trade-rationale">Rationale: FTSE YTD +5% vs SX5E -2.2% already shows the divergence starting. If oil stays above $85, this spread widens further. Energy sector dividend upside supports FTSE while autos/banks drag SX5E. This is both a directional and a decorrelation play.</div>
+      </div>
+
+      <div class="trade-idea">
+        <div class="trade-label exotic">EXOTIC — KOSPI Outperformance Basket</div>
+        <div class="trade-desc"><strong>Best-of call on KOSPI vs SX5E/SPX basket (3-6m):</strong> Position for KOSPI to be the best performer once the semiconductor cycle reasserts itself. KOSPI had the strongest 2025 rally (+71%), sold off hardest in the panic (-12%), and bounced hardest (+9.6%). This volatility creates opportunity.</div>
+        <div class="trade-rationale">Rationale: Samsung and SK Hynix (50% of KOSPI) are in a structural memory chip upcycle driven by AI demand. The -12% selloff was panic-driven, not fundamental. Once oil stabilizes, KOSPI will revert to its idiosyncratic semiconductor narrative. Best-of calls on a KOSPI vs DM basket capture this with limited downside.</div>
+      </div>
+
+      <div class="trade-idea">
+        <div class="trade-label hedge">HEDGE — Quanto Risk on Asian Exposure</div>
+        <div class="trade-desc"><strong>Review quanto exposures on NKY and KOSPI positions:</strong> In a high-correlation regime, the equity-FX correlation (NKY vs USDJPY, KOSPI vs USDKRW) also shifts. Yen and Won dynamics are being distorted by the oil shock — Japan and Korea are both major importers. Quanto adjustments may be mispriced.</div>
+        <div class="trade-rationale">Rationale: Quanto products assume a stable equity-FX correlation. The Iran shock has disrupted this — the yen is caught between safe-haven appreciation and oil-import weakness. If you're running NKY quantos, the correlation assumption needs re-examining. This is a hidden P&L risk in many exotic books.</div>
+      </div>
+
+      <div class="trade-idea">
+        <div class="trade-label short-corr">DISPERSION — Entry Signal Watchlist</div>
+        <div class="trade-desc"><strong>Set triggers for entering long dispersion (short index vol / long single-name vol) on SX5E and SPX:</strong> Wait for (1) FTSE/SX5E correlation to break below 0.85, (2) DSPX to stop making new lows, (3) VIX to stabilize for 3 consecutive sessions. When these conditions are met, enter long dispersion in 3-month expiry.</div>
+        <div class="trade-rationale">Rationale: The Correlation Risk Premium is at its richest when implied correlation is at its peak. Entering long dispersion at these levels has historically been the highest-Sharpe entry point — but timing matters. The trigger-based approach avoids catching the falling knife while capturing the mean-reversion when it starts.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Part 8: Next Week -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon teal">📅</div>
+      <h2>Part 8 — Key Signals Next Week</h2>
+    </div>
+    <div class="section-body">
+      <p><strong>Macro:</strong> Ceasefire/escalation headlines remain the primary driver. Hormuz tanker traffic = real-time oil supply barometer. US CPI on Wednesday — a hot print keeps the single-factor regime alive and delays decorrelation.</p>
+
+      <p><strong>Market:</strong> FTSE vs SX5E spread widening = first decorrelation signal. KOSPI independent moves on Samsung/Hynix news = signal #2. Cboe COR3M and DSPX inflection points worth monitoring for timing.</p>
+
+      <p><strong>Flow:</strong> Autocall barrier proximity on SX5E is amplifying the correlation mechanically through dealer hedging. If barriers are breached, expect a further correlation spike before any normalization.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p><strong style="color:#7a8ba3;">STELLAR SECURITIES</strong> — by Market Securities<br>
+    This note is prepared for informational purposes only and does not constitute investment advice.<br>
+    Correlation estimates are indicative based on observed co-movements and historical patterns — refer to Bloomberg CRR/CORR for exact levels.<br>
+    Data as of March 7, 2026. All levels approximate.</p>
+  </div>
+
+</div>
+</body>
+</html>
